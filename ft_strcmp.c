@@ -6,9 +6,11 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/11/17 20:40:46 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/03 18:55:58 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

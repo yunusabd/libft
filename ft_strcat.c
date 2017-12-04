@@ -6,9 +6,11 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:56:06 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/01 17:55:24 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/03 18:55:37 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

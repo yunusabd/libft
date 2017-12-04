@@ -6,37 +6,11 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 16:30:59 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/11/29 18:27:48 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/03 22:28:12 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char		*ft_strrev(const char *s)
-{
-	int		len;
-	int		i;
-	char	*rev;
-
-	len = ft_strlen(s);
-	if (!(rev = (char*)malloc(sizeof(*rev) * len + 1)))
-		return (NULL);
-	i = 0;
-	len--;
-	while (s[i])
-	{
-		rev[i] = s[len];
-		i++;
-		len--;
-	}
-	rev[i] = '\0';
-	return (rev);
-}
-
-static int		get_absolute(int n)
-{
-	return ((n < 0) ? -n : n);
-}
 
 char			*ft_itoa(int n)
 {
@@ -50,7 +24,7 @@ char			*ft_itoa(int n)
 	neg = (n < 0) ? 1 : 0;
 	while (n)
 	{
-		str[i] = get_absolute(n % 10) + 48;
+		str[i] = ft_absolute(n % 10) + 48;
 		n /= 10;
 		i++;
 	}

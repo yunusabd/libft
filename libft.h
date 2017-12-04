@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 18:32:51 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 15:38:34 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/04 15:05:37 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char				*ft_strndup(char const *s, size_t n);
+char				*ft_strrev(const char *s);
+int					ft_absolute(int n);
+void				ft_print_array(const char **arr);
+int					ft_sqrt(const int nb);
 #endif

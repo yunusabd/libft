@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 23:59:57 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 21:25:26 by yabdulha         ###   ########.fr       */
+/*   Created: 2017/12/04 15:06:07 by yabdulha          #+#    #+#             */
+/*   Updated: 2017/12/04 15:10:33 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_print_array(const char **arr)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-	size_t				i;
+	int i;
+	int j;
 
-	str1 = (const unsigned char *)s1;
-	str2 = (const unsigned char *)s2;
-	if (n == 0 || s1 == s2)
-		return (0);
 	i = 0;
-	while (n--)
-	{
-		if ((const unsigned char)str1[i] != (const unsigned char)str2[i])
+	if (arr)
+		while (arr[i] != '\0')
 		{
-			return ((int)((const unsigned char)str1[i]
-						- (const unsigned char)str2[i]));
+			j = 0;
+			while (arr[i][j] != '\0')
+			{
+				ft_putchar(arr[i][j]);
+				j++;
+			}
+			ft_putchar('\n');
+			i++;
 		}
-		i++;
-	}
-	return (0);
 }

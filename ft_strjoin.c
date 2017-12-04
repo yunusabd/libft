@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 16:32:17 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/01 17:25:40 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/03 22:20:07 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	i = 0;
-	while (i <= len)
+	while (len1 <= len)
 	{
 		new[len1] = s2[i];
 		i++;

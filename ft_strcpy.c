@@ -6,9 +6,11 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:46:13 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/11/20 22:37:15 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/03 18:56:28 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, char *src)
 {

@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 23:59:57 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 21:25:26 by yabdulha         ###   ########.fr       */
+/*   Created: 2017/12/03 21:56:43 by yabdulha          #+#    #+#             */
+/*   Updated: 2017/12/03 22:08:49 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strrev(const char *s)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-	size_t				i;
+	int		len;
+	int		i;
+	char	*rev;
 
-	str1 = (const unsigned char *)s1;
-	str2 = (const unsigned char *)s2;
-	if (n == 0 || s1 == s2)
-		return (0);
+	len = ft_strlen(s);
+	if (!(rev = (char*)malloc(sizeof(*rev) * len + 1)) || !s)
+		return (NULL);
 	i = 0;
-	while (n--)
+	len--;
+	while (s[i])
 	{
-		if ((const unsigned char)str1[i] != (const unsigned char)str2[i])
-		{
-			return ((int)((const unsigned char)str1[i]
-						- (const unsigned char)str2[i]));
-		}
+		rev[i] = s[len];
 		i++;
+		len--;
 	}
-	return (0);
+	rev[i] = '\0';
+	return (rev);
 }

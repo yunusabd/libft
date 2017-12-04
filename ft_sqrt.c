@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 23:59:57 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 21:25:26 by yabdulha         ###   ########.fr       */
+/*   Created: 2017/12/04 15:03:12 by yabdulha          #+#    #+#             */
+/*   Updated: 2017/12/04 15:04:53 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_sqrt(const int nb)
 {
-	const unsigned char	*str1;
-	const unsigned char	*str2;
-	size_t				i;
+	int result;
 
-	str1 = (const unsigned char *)s1;
-	str2 = (const unsigned char *)s2;
-	if (n == 0 || s1 == s2)
+	if (!(nb % 2 >= 0))
 		return (0);
-	i = 0;
-	while (n--)
+	result = 1;
+	while (result <= nb / result)
 	{
-		if ((const unsigned char)str1[i] != (const unsigned char)str2[i])
-		{
-			return ((int)((const unsigned char)str1[i]
-						- (const unsigned char)str2[i]));
-		}
-		i++;
+		if (result == nb / result && nb % result == 0)
+			return (result);
+		result++;
 	}
 	return (0);
 }
