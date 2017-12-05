@@ -6,13 +6,13 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 16:46:13 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 18:56:28 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/04 21:20:35 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 

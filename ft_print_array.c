@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 15:06:07 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/04 15:10:33 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/04 21:21:01 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_print_array(const char **arr)
 
 	i = 0;
 	if (arr)
+	{
 		while (arr[i] != '\0')
 		{
 			j = 0;
@@ -30,4 +31,5 @@ void	ft_print_array(const char **arr)
 			ft_putchar('\n');
 			i++;
 		}
+	}
 }

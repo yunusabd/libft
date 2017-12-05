@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 18:32:51 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/04 15:05:37 by yabdulha         ###   ########.fr       */
+/*   Updated: 2017/12/05 20:32:57 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-unsigned long int	ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
-char				*ft_strcpy(char *dst, char *src);
+char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
@@ -60,8 +60,8 @@ char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 
-void				ft_striter(char *s, void (*f)(char *));
-void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+void				ft_striter(char *s, void (*f)(char*));
+void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strequ(char const *s1, char const *s2);
@@ -83,7 +83,7 @@ void				ft_putnbr_fd(int n, int fd);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
