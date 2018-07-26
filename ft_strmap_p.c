@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmap_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/04/28 17:54:19 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/04/28 17:55:26 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+/*
+** Same as ft_strmap, but overwrites the input string with the modified one.
+*/
+
+char	*ft_strmap_p(char *s, char (*f)(char))
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	int		i;
+
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		s1++;
-		s2++;
+		s[i] = f(s[i]);
+		i++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (s);
 }

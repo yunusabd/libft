@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_numlen_ll.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/03/11 21:18:53 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/03/11 21:19:01 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Returns the length of a number, with an additional space for the '-' for
+** negative numbers.
+*/
+
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_numlen_ll(long long nb, int base)
 {
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	int	len;
+
+	if (base < 2)
+		return (0);
+	len = (nb < 0) ? 2 : 1;
+	while ((nb /= base))
+		len++;
+	return (len);
 }

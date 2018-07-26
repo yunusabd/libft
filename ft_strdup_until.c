@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy_until.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/02/12 23:13:16 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/03/15 18:46:06 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char		*ft_strdup_until(const char *s, const char *end)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	size_t		i;
+	char		*new;
+
+	i = 0;
+	while (s[i] && &s[i] != end)
+		i++;
+	new = ft_strnew(i);
+	i = 0;
+	while (s[i] && &s[i] != end)
 	{
-		s1++;
-		s2++;
+		new[i] = s[i];
+		i++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (new);
 }

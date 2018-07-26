@@ -6,14 +6,19 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:19:35 by yabdulha          #+#    #+#             */
-/*   Updated: 2017/12/03 15:30:31 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:51:20 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int		ft_putstr(char const *s)
 {
-	while (*s)
-		write(1, s++, 1);
+	int		len;
+
+	if (!s)
+		return (0);
+	len = ft_strlen(s);
+	write(1, s, len);
+	return (len);
 }

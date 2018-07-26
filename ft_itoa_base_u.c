@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/03/16 20:35:42 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/04/28 17:51:47 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char	*ft_itoa_base_u(unsigned long long value, int base)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	char	*buff;
+	char	*digits;
+	int		len;
+	int		tmp;
+
+	if (base < 2 || base > 16)
+		return (NULL);
+	len = ft_numlen_umax(value, base);
+	tmp = value % base;
+	tmp *= (tmp < 0) ? -1 : 1;
+	value /= base;
+	buff = ft_strnew(len);
+	digits = "0123456789ABCDEF";
+	buff[len - 1] = digits[tmp];
+	while (--len && value)
 	{
-		s1++;
-		s2++;
+		buff[len - 1] = digits[value % base];
+		value /= base;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (buff);
 }

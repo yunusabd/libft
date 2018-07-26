@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2017/11/17 19:43:49 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/05/30 19:30:26 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_isprint_s(char *s)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	while (*s)
 	{
-		s1++;
-		s2++;
+		if (*s < ' ' || *s > '~')
+			return (0);
+		s++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (1);
 }

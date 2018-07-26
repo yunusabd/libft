@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_count_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 20:02:33 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/06/12 16:34:10 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/06/03 19:43:15 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/06/03 19:48:08 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int		ft_count_char(char *s, char c)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	int		i;
+
+	i = 0;
+	while (*s)
 	{
-		s1++;
-		s2++;
+		if (*s == c)
+			i++;
+		s++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (i);
 }

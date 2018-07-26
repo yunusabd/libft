@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_itoa_base_max.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 15:14:00 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/02/12 23:11:20 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/03/11 21:59:32 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/05/27 20:45:46 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+char	*ft_itoa_base_max(intmax_t value, int base)
 {
-	char		*cpy;
-	size_t		i;
+	char	*buff;
+	char	*digits;
+	int		len;
+	int		minus;
 
-	i = 0;
-	if (!(cpy = (char*)malloc(sizeof(*cpy) * (n + 1))))
+	if (base < 2 || base > 16)
 		return (NULL);
-	while (s1[i] != '\0' && i < n)
+	minus = (value < 0 && base == 10) ? 1 : 0;
+	value *= (value < 0) ? (-1) : 1;
+	len = ft_numlen_max(value, base) + minus;
+	if (!(buff = ft_strnew(len)))
+		return (NULL);
+	digits = "0123456789ABCDEF";
+	while (len--)
 	{
-		cpy[i] = s1[i];
-		i++;
+		buff[len] = digits[value % base];
+		value /= base;
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	if (minus)
+		buff[0] = '-';
+	return (buff);
 }
