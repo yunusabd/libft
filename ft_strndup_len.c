@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strndup_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 15:14:00 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/07/26 20:32:55 by yabdulha         ###   ########.fr       */
+/*   Created: 2018/07/26 20:35:28 by yabdulha          #+#    #+#             */
+/*   Updated: 2018/07/26 20:36:00 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+/*
+**	Copies n chars from s1, without checking if it exists or not.
+**	Use with caution!
+*/
+
+char	*ft_strndup_len(const char *s1, size_t n)
 {
 	char		*cpy;
 	size_t		i;
@@ -20,7 +25,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	i = 0;
 	if (!(cpy = (char*)malloc(sizeof(*cpy) * (n + 1))))
 		return (NULL);
-	while (s1[i] != '\0' && i < n)
+	while (i < n)
 	{
 		cpy[i] = s1[i];
 		i++;
