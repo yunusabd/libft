@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 18:32:51 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/07/26 20:33:17 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/12 13:06:50 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char				*ft_strrev(const char *s);
 int					ft_absolute(int n);
 void				ft_print_array(const char **arr);
 int					ft_sqrt(const int nb);
-int					ft_power(int nb, int power);
+intmax_t			ft_power(int nb, int power);
 
 char				*ft_strdup_until(const char *s, const char *end);
 char				*ft_strpbrk(const char *s1, const char *s2);
