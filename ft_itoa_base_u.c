@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 20:35:42 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/04/28 17:51:47 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/19 20:10:36 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_itoa_base_u(unsigned long long value, int base)
 	tmp = value % base;
 	tmp *= (tmp < 0) ? -1 : 1;
 	value /= base;
-	buff = ft_strnew(len);
+	if (!(buff = ft_strnew(len)))
+		return (NULL);
 	digits = "0123456789ABCDEF";
 	buff[len - 1] = digits[tmp];
 	while (--len && value)

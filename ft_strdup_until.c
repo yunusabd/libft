@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/12 23:13:16 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/03/15 18:46:06 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/19 20:11:37 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char		*ft_strdup_until(const char *s, const char *end)
 	i = 0;
 	while (s[i] && &s[i] != end)
 		i++;
-	new = ft_strnew(i);
+	if (!(new = ft_strnew(i)))
+		return (NULL);
 	i = 0;
 	while (s[i] && &s[i] != end)
 	{

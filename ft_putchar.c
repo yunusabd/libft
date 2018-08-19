@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:17:02 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/04/19 18:27:03 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/19 20:11:05 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static char	*handle_unicode(wchar_t c)
 {
 	char	*str;
 
-	str = ft_strnew(4);
+	if (!(str = ft_strnew(4)))
+		return (NULL);
 	if (c <= 0x7F)
 		str[0] = c;
 	else if (c <= 0x7FF)
