@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 16:29:14 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/01 18:40:20 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:42:28 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static char	*set_len(char *fstr, int *len_conv, int offset)
 {

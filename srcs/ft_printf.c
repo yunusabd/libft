@@ -6,13 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 20:44:26 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/21 13:41:19 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:43:25 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-#include <wchar.h>
+#include "libft.h"
 
 static int		print_string(char *s)
 {
