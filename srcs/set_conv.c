@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 17:26:50 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/01 18:40:48 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:39:50 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 char		*init_d(va_list ap, t_printf *specs)
 {

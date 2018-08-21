@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 21:10:54 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/01 18:40:29 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:39:42 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static char	*handle_precision(char *str, t_printf *specs)
 {

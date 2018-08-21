@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 14:18:55 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/01 18:40:56 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:39:53 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static long long		convert_len(va_list ap, const t_printf *specs)
 {

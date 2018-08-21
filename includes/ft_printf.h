@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/13 12:03:52 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/21 13:23:14 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:37:28 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <limits.h>
 # include <stdarg.h>
-# include "libft.h"
 
 # define BUFFSIZE 20
 # define SPECIFIERS "sSpdDioOuUxXcCb%"

@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 17:11:21 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/02 16:04:23 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:39:34 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 char			*handle_unicode(wchar_t c)
 {

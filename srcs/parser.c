@@ -6,11 +6,12 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 16:29:14 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/21 13:28:06 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:39:46 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static char	*find_specifier(char *str, t_printf *specs)
 {
