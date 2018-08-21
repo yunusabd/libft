@@ -6,7 +6,7 @@
 #    By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 22:06:52 by yabdulha          #+#    #+#              #
-#    Updated: 2018/08/12 13:00:54 by yabdulha         ###   ########.fr        #
+#    Updated: 2018/08/21 13:05:17 by yabdulha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,25 +23,47 @@ FILES = ft_putchar ft_putstr ft_strcmp ft_strlen ft_strdup ft_strcpy ft_strcat \
 		ft_strsub ft_strjoin ft_strtrim ft_strsplit ft_putendl ft_putchar_fd \
 		ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew ft_lstdelone \
 		ft_lstdel ft_lstadd ft_lstiter ft_lstmap ft_strndup ft_strndup_len \
-		ft_strrev ft_absolute ft_print_array ft_sqrt ft_power
-FT_C =	$(patsubst %,%.c,$(FILES))
-OBJ  =	$(patsubst %,%.o,$(FILES))
+		ft_strrev ft_absolute ft_print_array ft_sqrt ft_power \
+		ft_printf parser converter uconverter padding convert_unicode \
+		set_conv get_flags
+
+SRCS_PATH = srcs
+FILENAMES =	$(patsubst %,%.c,$(FILES))
+SRCS = $(addprefix $(SRCS_PATH)/,$(FILENAMES))
+
+OBJS_PATH = objects
+OBJS_NAME  = $(patsubst %,%.o,$(FILES))
+OBJS = $(addprefix $(OBJS_PATH)/,$(OBJS_NAME))
+
+INCLUDES_PATH = includes
+INCLUDES_NAME = libft.h ft_printf.h
+INCLUDES = $(addprefix $(INCLUDES_PATH)/,$(INCLUDE_NAME))
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(OBJ):
-	$(CC) $(FLAGS) -c $(FT_C)
-
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+$(OBJS): $(OBJS_PATH) $(SRCS:PATH) $(INCLUDES_PATH)
+	@echo "compiling source"
+	gcc -c $(SRCS) $(CFLAGS) -I$(INCLUDES_PATH)
+	@mv $(OBJS_NAME) $(OBJS_PATH)
+
+$(OBJS_PATH):
+	@mkdir $(OBJS_PATH) 2> /dev/null || true
+
 clean:
-	/bin/rm -f $(OBJ)
+	@echo "\033[32;5mCleaning..."
+	@rm -f $(OBJS)
+	@rmdir $(OBJS_PATH) 2> /dev/null || true
+	@echo "\033[32;3mCleaning Done !\n\033[0m"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@echo "\033[32;5mFcleaning..."
+	@rm -f $(NAME)
+	@echo "\033[32;3mFcleaning Done !\n\033[0m"
 
 re: fclean all
