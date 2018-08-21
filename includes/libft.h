@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 18:32:51 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/12 13:06:50 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:18:21 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ int					ft_numlen_umax(uintmax_t nb, int base);
 char				ft_tolowercase(char c);
 
 char				*ft_strmap_p(char *s, char (*f)(char));
+int					ft_printf(const char *s, ...);
 #endif
