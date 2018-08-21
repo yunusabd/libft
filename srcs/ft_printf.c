@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 20:44:26 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/21 13:22:11 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:28:39 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int				ft_printf(const char *format, ...)
 		ft_bzero((void*)tmp, i);
 		i = 0;
 		if (*format == '%')
-			ret += (parse_format(ap, &format));
+			ret += (parse_format(ap, (char**)&format));
 	}
 	if (i)
 		write(1, tmp, i);
