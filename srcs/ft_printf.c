@@ -6,7 +6,7 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 20:44:26 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/05/01 18:40:11 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:22:11 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int		parse_format(va_list ap, char **format)
 	return (print_arg(ap, &new, NULL, 0));
 }
 
-int				ft_printf(char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	int			i;

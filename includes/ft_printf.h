@@ -6,18 +6,16 @@
 /*   By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/13 12:03:52 by yabdulha          #+#    #+#             */
-/*   Updated: 2018/08/21 12:45:51 by yabdulha         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:23:14 by yabdulha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <limits.h>
 # include <stdarg.h>
 # include "libft.h"
-# include <limits.h>
-# include <locale.h>
-# include <stdio.h>
 
 # define BUFFSIZE 20
 # define SPECIFIERS "sSpdDioOuUxXcCb%"
@@ -53,7 +51,7 @@ typedef struct	s_ret
 }				t_ret;
 
 char			*parse_spec(char *str, t_printf *specs);
-int				ft_printf(char *format, ...);
+int				ft_printf(const char *format, ...);
 char			*convert_s(char *str, t_printf *specs);
 char			*convert_d(va_list ap, t_printf *specs);
 char			*convert_u(va_list ap, t_printf *specs);
