@@ -6,7 +6,7 @@
 #    By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 22:06:52 by yabdulha          #+#    #+#              #
-#    Updated: 2018/08/21 13:05:17 by yabdulha         ###   ########.fr        #
+#    Updated: 2018/08/21 15:12:06 by yabdulha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,38 +27,36 @@ FILES = ft_putchar ft_putstr ft_strcmp ft_strlen ft_strdup ft_strcpy ft_strcat \
 		ft_printf parser converter uconverter padding convert_unicode \
 		set_conv get_flags
 
-SRCS_PATH = srcs
-FILENAMES =	$(patsubst %,%.c,$(FILES))
-SRCS = $(addprefix $(SRCS_PATH)/,$(FILENAMES))
+INCLUDES = libft ft_printf
 
-OBJS_PATH = objects
-OBJS_NAME  = $(patsubst %,%.o,$(FILES))
-OBJS = $(addprefix $(OBJS_PATH)/,$(OBJS_NAME))
+SRCS_PATH = srcs/
+FILENAMES = $(patsubst %,%.c,$(FILES)) 
+SRCS = $(addprefix $(SRCS_PATH),$(FILENAMES))
 
-INCLUDES_PATH = includes
-INCLUDES_NAME = libft.h ft_printf.h
-INCLUDES = $(addprefix $(INCLUDES_PATH)/,$(INCLUDE_NAME))
+OBJS_PATH = objects/
+OBJS_NAME  = $(patsubst %.c, $(OBJS_PATH)%.o, $(FILENAMES))
+
+INCLUDES_PATH = includes/
+INCLUDES_NAMES = $(patsubst %,%.h,$(INCLUDES)) 
+INCL = $(addprefix $(INCLUDES_PATH),$(INCLUDES_NAMES))
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJS_PATH) $(OBJS_NAME)
+	ar rc $(NAME) $(OBJS_PATH)*.o
 	ranlib $(NAME)
-
-$(OBJS): $(OBJS_PATH) $(SRCS:PATH) $(INCLUDES_PATH)
-	@echo "compiling source"
-	gcc -c $(SRCS) $(CFLAGS) -I$(INCLUDES_PATH)
-	@mv $(OBJS_NAME) $(OBJS_PATH)
 
 $(OBJS_PATH):
 	@mkdir $(OBJS_PATH) 2> /dev/null || true
 
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.c $(INCL)
+	@$(CC) $(FLAGS) -c $< -o $@ -I $(INCLUDES_PATH)
+
 clean:
 	@echo "\033[32;5mCleaning..."
-	@rm -f $(OBJS)
-	@rmdir $(OBJS_PATH) 2> /dev/null || true
+	@rm -rf $(OBJS_PATH) 2> /dev/null || true
 	@echo "\033[32;3mCleaning Done !\n\033[0m"
 
 fclean: clean
