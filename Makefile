@@ -6,7 +6,7 @@
 #    By: yabdulha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 22:06:52 by yabdulha          #+#    #+#              #
-#    Updated: 2018/08/21 15:12:06 by yabdulha         ###   ########.fr        #
+#    Updated: 2018/08/21 17:10:44 by yabdulha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ FILES = ft_putchar ft_putstr ft_strcmp ft_strlen ft_strdup ft_strcpy ft_strcat \
 		ft_lstdel ft_lstadd ft_lstiter ft_lstmap ft_strndup ft_strndup_len \
 		ft_strrev ft_absolute ft_print_array ft_sqrt ft_power \
 		ft_printf parser converter uconverter padding convert_unicode \
-		set_conv get_flags
+		set_conv get_flags \
+		ft_itoa_base ft_itoa_base_u ft_strjoinfree ft_strmap_p \
+		ft_tolowercase ft_numlen_ll ft_numlen_umax \
 
 INCLUDES = libft ft_printf
 
